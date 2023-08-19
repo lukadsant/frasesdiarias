@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Frases Aleatórias</title>
+</head>
+<body>
+    <div class="center-container">
+        <img src="{{ url_for('static', filename='mascot.png') }}" alt="Girl in a jacket" width="300" height="250">
+
+        <h1>Frase do Dia:</h1>
+        <p>{{ phrase }}</p>
+    </div>
+    <script>
+        const softColors = [
+            "#DDEFFB", "#B0CCE4", "#C9E3E6", "#C8E6C9", "#A2D8A7", "#E3F9E5",
+            "#F1D2E9", "#F9E4E6", "#F6CCD1", "#FFD8B5", "#FFC18A", "#FFDAB9",
+            "#DACFE9", "#C4A2E1", "#E2CCEB", "#D5B99E", "#B9916D", "#E2C7B5",
+            "#EAEAEA", "#F2F2F2", "#EFEFEF", "#FFECB5", "#FFF0AA", "#B2ECDC"
+        ];
+    
+        function getRandomColor() {
+            const randomIndex = Math.floor(Math.random() * softColors.length);
+            return softColors[randomIndex];
+        }
+    
+        const firstColor = getRandomColor();
+        const secondColor = '#e6f1e8';
+    
+        document.body.style.background = `linear-gradient(to bottom, ${firstColor}, ${secondColor})`;
+    </script>
+</body>
+</html>
